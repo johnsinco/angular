@@ -1,21 +1,22 @@
 class RegisterController < ApplicationController
 
   respond_to :json
-  
-  # step 1
-  def new
+  respond_to :html, :only => [:welcome]
+
+  def welcome
     @user = User.new
+    respond_with @user, layout: false
   end
 
-  # step 2
   def account
+    @user = User.new(params[:user])
+    @user.save
+    respond_with @user
   end
 
-  # step 3
-  def verify
+  def prefs
   end
 
-  # step 4
   def thanks
   end
 

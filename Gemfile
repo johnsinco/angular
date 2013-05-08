@@ -26,6 +26,13 @@ gem 'mongoid'
 gem 'twitter-bootstrap-rails'
 gem 'angularjs-rails'
 
+gem 'jasmine'
+
+group :test do
+  gem 'minitest-spec-rails'
+  gem 'turn'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
