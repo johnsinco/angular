@@ -6,8 +6,11 @@ development:
   database: oppfunds
 
 test:
-  host: localhost
-  database: angular_test
+  host: ds059557.mongolab.com
+  port: 59557
+  username: test
+  password: test 
+  database: oppfunds_test
 
 # set these environment variables on your prod server
 production:
