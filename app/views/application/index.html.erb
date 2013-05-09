@@ -35,9 +35,10 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
+    <div ng-view></div>
     <div ng-controller="RegisterCtrl">
       <span>{{step}}</span>
-      <h3>Register for access to Oppfunds.com</h3>
+      <h3>Register for access to the site</h3>
       <form ng-submit="createAccount()">
         <input name='first_name' type="text" ng-model="user.first_name" placeholder="given name">
         <span>{{user.first_name}}</span>
