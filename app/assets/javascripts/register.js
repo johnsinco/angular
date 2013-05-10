@@ -12,15 +12,26 @@
   }]);
 
 var RegisterCtrl = function($scope, $location, User) {
-  $scope.user = new User();
+
+  $scope.init = function() {
+    $scope.user = new User();
+    $scope.step = "register";
+  }
 
   $scope.createAccount = function() {
-    $scope.user.create();
-    $scope.step = "profile"
+    $scope.user.create().then(function(result) {
+      $scope.save_result = result;  
+    });
+    $scope.step = "profile";
     $location.path('/#profile');
   }
   $scope.completeProfile = function() {
-    $scope.user = User.save($scope.user)
+    console.log("$scope._id = "+$scope._id);
+    $scope.user = User.get($scope._id).then(function(user) {
+      user.phone = $scope.user.phone;
+      user.street = $scope.user.street;
+      user.update();
+    });
     $scope.step = "preferences"
     $location.path('/#preferences');
   }

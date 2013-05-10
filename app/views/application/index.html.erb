@@ -37,9 +37,10 @@
   </head>
   <body>
     <h3>Welcome to Oppfunds.com</h3>
-    <div ng-view>
+    <div ng-controller="RegisterCtrl" ng-init="init()">
+      <div ng-view>
+      </div>
     </div>
-
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
