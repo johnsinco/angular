@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'mongoid'
 gem 'twitter-bootstrap-rails'
 gem 'angularjs-rails'
+gem 'angularjs-rails-resource'
 
 gem 'jasmine'
 

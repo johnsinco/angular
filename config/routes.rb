@@ -1,6 +1,6 @@
 Angular::Application.routes.draw do
 
-  root to: 'register#welcome'
+  root to: 'application#index'
   
   resources :users
 

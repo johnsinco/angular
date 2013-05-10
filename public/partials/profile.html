@@ -1,3 +1,28 @@
-<div>
-  <span>TBD profile edit {{step}}</span>
+<div ng-controller="RegisterCtrl">
+  <span>{{step}}</span>
+  <h3>response = {{resp}}</h3>
+  <h5>Hello {{user.first_name}} {{user.last_name}}, please complete your profile</h5>
+  <form class="form-horizontal" ng-submit="completeProfile()">
+    <input type="hidden" ng-model="user.id" />
+    <span>id = {{user.id}}</span>
+    <div class="control-group">
+      <label class="control-label" for="phone">phone</label>
+      <div class="controls">
+        <input name='phone' type="text" ng-model="user.phone" placeholder="phone">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="street">street</label>
+      <div class="controls">
+        <input name='street' type="text" ng-model="user.street" placeholder="street">
+      </div>
+    </div>
+    <hr>
+  <div class="control-group">
+    <div class="controls">
+    <input class="btn-primary" type="submit" value="Register">
+  </div>
+  </div>
+  </form> 
 </div>
+

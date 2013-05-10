@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
     <title><%= content_for?(:title) ? yield(:title) : "Angular" %></title>
     <%= csrf_meta_tags %>
 
@@ -35,21 +36,9 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-    <div ng-view></div>
-    <div ng-controller="RegisterCtrl">
-      <span>{{step}}</span>
-      <h3>Register for access to the site</h3>
-      <form ng-submit="createAccount()">
-        <input name='first_name' type="text" ng-model="user.first_name" placeholder="given name">
-        <span>{{user.first_name}}</span>
-        <input name='' type="text" ng-model="user.last_name" placeholder="surname">
-        <input name='username' type="text" ng-model="user.username" placeholder="desired username">
-        <input name='email' type="text" ng-model="user.email" placeholder="your email address">
-        <hr>
-        <input class="btn-primary" type="submit" value="Register">
-      </form> 
+    <h3>Welcome to Oppfunds.com</h3>
+    <div ng-view>
     </div>
-
 
     <!-- Javascripts
     ================================================== -->
