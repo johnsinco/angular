@@ -3,7 +3,7 @@
   <span>saveresult = {{save_result.class}}</span>
   <h5>Hello {{user.first_name}} {{user.last_name}}, please complete your profile</h5>
   <form class="form-horizontal" ng-submit="completeProfile()">
-    <input type="hidden" name="_id" ng-model="user._id" value="{{user._id}}" />
+    <input type="hidden" name="_id" ng-model="_id" value="{{user._id}}" />
     <span>id = {{user._id}}</span>
     <div class="control-group">
       <label class="control-label" for="phone">phone</label>
@@ -14,9 +14,16 @@
     <div class="control-group">
       <label class="control-label" for="street">street</label>
       <div class="controls">
-        <input name='street' type="text" ng-model="user.street" placeholder="street">
+        <input name='street' type="text" ng-model="user.address.street" placeholder="street">
       </div>
     </div>
+    <div class="control-group">
+      <label class="control-label" for="state">state</label>
+      <div class="controls">
+        <input name='state' type="text" ng-model="user.address.state" placeholder="state">
+      </div>
+    </div>
+
     <hr>
   <div class="control-group">
     <div class="controls">

@@ -26,12 +26,17 @@ var RegisterCtrl = function($scope, $location, User) {
     $location.path('/#profile');
   }
   $scope.completeProfile = function() {
-    console.log("$scope._id = "+$scope._id);
-    $scope.user = User.get($scope._id).then(function(user) {
+    console.log("$scope._id = "+$scope.user._id);
+    console.log("before query for id = "+$scope.user._id);
+    User.get($scope.user._id).then(function(user) {
+      console.log("in query callback...");
+      console.log("user = "+user+ "_id = "+user._id + "id = "+user.id);
+      user.id = user._id
       user.phone = $scope.user.phone;
       user.street = $scope.user.street;
       user.update();
     });
+
     $scope.step = "preferences"
     $location.path('/#preferences');
   }
